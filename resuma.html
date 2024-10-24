@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Template</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #f1f7ff, #f5f9ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            transition: background 0.3s;
+        }
+
+        .container {
+            width: 900px;
+            background-color: #fff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            overflow: hidden;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Left section */
+        .left-section {
+            background: linear-gradient(to bottom right, #ffcccc,  #960ab9);
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .left-section img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .left-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .left-section p {
+            font-size: 0.9rem;
+        }
+
+        .left-section .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .cv-button {
+            background-color:  #960ab9;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Right section */
+        .right-section {
+            padding: 30px;
+            position: relative;
+        }
+
+        /* Logo and theme button */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color:  #960ab9;
+        }
+
+        .theme-button {
+            font-size: 24px;
+            cursor: pointer;
+            color:  #960ab9;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #960ab9;
+        }
+
+        /* About me section */
+        .about-section {
+            margin-bottom: 40px;
+        }
+
+        .about-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        /* What I do section */
+        .what-i-do {
+            margin-bottom: 40px;
+        }
+
+        .what-i-do h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .service-box {
+            background-color: #f5f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .service-box i {
+            font-size: 2rem;
+            color: #960ab9;
+            margin-bottom: 10px;
+        }
+
+        .service-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 0.9rem;
+        }
+
+        /* Clients */
+        .clients {
+            text-align: center;
+        }
+
+        .clients h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .clients img {
+            width: 80px;
+            margin: 0 15px;
+        }
+
+        /* Dark theme */
+        body.dark-theme {
+            background: linear-gradient(to right, #1c1c1c, #333);
+        }
+
+        .container.dark-theme {
+            background-color: #222;
+            color: #ccc;
+        }
+
+        .dark-theme .navbar a {
+            color: #ccc;
+        }
+
+        .dark-theme .navbar a:hover {
+            color:  #960ab9;
+        }
+
+        .dark-theme .theme-button {
+            color: #960ab9;
+        }
+
+        .dark-theme .left-section {
+            background: linear-gradient(to bottom right, #333, #555);
+        }
+
+        .dark-theme .cv-button {
+            background-color: #960ab9;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <div class="container">
+        <!-- Left section -->
+        <div class="left-section">
+            <img src="https://via.placeholder.com/120" alt="Profile Image">
+            <h1>Amara Hassan</h1>
+            <p>Front End Web Developer</p>
+
+            <!-- Social icons -->
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/amara-hssan/"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.instagram.com/ammaramalck94/"><i class='bx bxl-instagram'></i></a>
+            </div>
+
+            <!-- Contact info -->
+            <div class="contact-info">
+                <p><i class='bx bx-phone'></i> <b> +923042259629</b></p>
+                <p><i class='bx bx-envelope'></i> <b> amarahssan285@gmail.com</b></p>
+                <p><i class='bx bx-map'></i> <b> Bahawalpur 63100, Pak</b></p>
+            </div>
+
+            <!-- CV button -->
+            <a href="#" class="cv-button">Download CV</a>
+        </div>
+
+        <!-- Right section -->
+        <div class="right-section">
+            <!-- Header -->
+            <div class="header">
+                <div class="logo">Amara Hassan</div>
+                <i class='bx bx-moon theme-button'></i>
+            </div>
+
+            <!-- Navbar -->
+            <div class="navbar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <!-- About section -->
+            <div class="about-section">
+                <h2>About Me</h2>
+                <p>
+                   I am a creative front-end developer crafting stunning, user-friendly websites. Passionate about blending aesthetics and functionality for an exceptional digital experience. Let's build something amazing!
+                </p>
+            </div>
+
+            <!-- What I do section -->
+            <div class="what-i-do">
+                <h3>What I Do</h3>
+                <div class="services">
+                    <div class="service-box">
+                        <i class='bx bx-paint'></i>
+                        <h4>UI/UX Design</h4>
+                        <p>Design user-friendly interfaces with a focus on simplicity and usability.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class='bx bx-code'></i>
+                        <h4>Web Development</h4>
+                        <p>Create robust applications for iOS and Android using the latest technologies.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class='bx bx-camera'></i>
+                        <h4>Responsive Design</h4>
+                        <p>Responsive web design ensures websites look great on any device.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class='bx bx-world'></i>
+                        <h4>Web Development</h4>
+                        <p>Design and develop high-quality websites with rich user experiences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clients -->
+            <div class="clients">
+                <h3>Clients</h3>
+                <img src="images/team1.png" alt="Client 1">
+                <img src="images/team2.png" alt="Client 2">
+                <img src="images/team3.png" alt="Client 3">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themeButton = document.querySelector('.theme-button');
+        const body = document.body;
+
+        themeButton.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+            
+            // Toggle between moon and sun icons
+            if (themeButton.classList.contains('bx-moon')) {
+                themeButton.classList.replace('bx-moon', 'bx-sun');
+            } else {
+                themeButton.classList.replace('bx-sun', 'bx-moon');
+            }
+        });
+    </script>
+
+</body>
+</html>
